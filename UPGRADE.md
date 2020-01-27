@@ -43,7 +43,7 @@ Use the method `getQRContent()` on that same class to retrieve the content for t
 ### Translations
 
 The bundle's translations have been moved to its own domain `SchebTwoFactorBundle`. The prefix `scheb_two_factor.` has
-been removed on the translation keys. Please update in your templates: 
+been removed on the translation keys. Please update in your templates:
 
 Before:
 ```twig
@@ -76,16 +76,16 @@ implementations.
 - `Scheb\TwoFactorBundle\Security\TwoFactor\Handler\AuthenticationHandlerInterface`
 - `Scheb\TwoFactorBundle\Security\TwoFactor\Provider\Google\GoogleAuthenticatorInterface`
 - `Scheb\TwoFactorBundle\Security\TwoFactor\Provider\Email\Generator\CodeGeneratorInterface`
-- `Scheb\TwoFactorBundle\Security\TwoFactor\Provider\TwoFactorProviderInterface` 
+- `Scheb\TwoFactorBundle\Security\TwoFactor\Provider\TwoFactorProviderInterface`
 
 The method `Scheb\TwoFactorBundle\Security\TwoFactor\AuthenticationContextFactoryInterface::create` requires
-`$firewallName` as the 3rd argument. 
+`$firewallName` as the 3rd argument.
 
 In the two-factor provider interface `Scheb\TwoFactorBundle\Security\TwoFactor\Provider\TwoFactorProviderInterface` the
 method `requestAuthenticationCode()` has been removed and replaced by `validateAuthenticationCode()`. The method
 `getFormRenderer()` must return an instance of
 `Scheb\TwoFactorBundle\Security\TwoFactor\Provider\TwoFactorFormRendererInterface` to display the authentication form.
-See the documentation on [how to implement a custom two-factor provider](Resources/doc/providers/custom.md) for more
+See the documentation on [how to implement a custom two-factor provider](doc/providers/custom.md) for more
 details.
 
 The configuration options `scheb_two_factor.parameter_names.auth_code` and `scheb_two_factor.parameter_names.trusted`
@@ -108,7 +108,7 @@ In the interface `Scheb\TwoFactorBundle\Model\Email\TwoFactorInterface` the meth
 The trusted device feature no longer requires you to store trusted tokens. Instead, it is using JWT to store on a signed
 cookie on the trusted device.
 
-The configuration node `scheb_two_factor.trusted_computer` has been renamed to `scheb_two_factor.trusted_device`. 
+The configuration node `scheb_two_factor.trusted_computer` has been renamed to `scheb_two_factor.trusted_device`.
 
 `Scheb\TwoFactorBundle\Security\TwoFactor\Trusted\TrustedComputerManagerInterface` has been replaced by
 `Scheb\TwoFactorBundle\Security\TwoFactor\Trusted\TrustedDeviceManagerInterface`. If you want to have your own
